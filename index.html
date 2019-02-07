@@ -6,6 +6,36 @@
 
     <title>Socket.Io Chat</title>
     <style>
+    .App {
+    text-align: center;
+    }
+
+    .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 7vmin;
+    }
+
+    .App-header {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    }
+
+    @keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+    </style>    
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -13,48 +43,85 @@
         }
 
         body {
+            background: url("/bg.png") no-repeat;
+            background-size: 95%;
+            background-color: black;
+            background-position: top right 
+
+        }
+
+        chat-box {
             font: 13px Helvetica, Arial;
+            color: 000582
         }
 
         form {
-            background: #000;
+            background: #FFBDDB;
             padding: 3px;
             position: fixed;
             bottom: 0;
-            width: 100%;
+            width: 20%;
         }
 
         form input {
             border: 0;
             padding: 10px;
-            width: 90%;
+            width: 85%;
             margin-right: .5%;
         }
 
         form button {
-            width: 9%;
+            height: 30px;
+            width: 32px;
             background: #093;
             border: none;
+            color: white
         }
 
         #messages {
             list-style-type: none;
             margin: 0;
-            padding: 0;
+            margin-top: 0px;
+            padding: 0px;
+            border: 0px;
+            width: 20%;
+            z-index: 1;
+            background: #D6F6FF;
         }
 
         #message li {
             padding: 5px 10px;
+            width: 20%;
+            z-index: 1;
         }
 
         #messages li:nth-child(odd) {
-            background: #eee
+            background: #F5DFFB;
         }
     
     </style>
+    <style>
+        bg-ele {
+            background-color: white;
+
+        }
+        .rectangle {
+            height: 1000px;
+            width: 20%;
+            position: fixed;
+            background-color: white;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body>
+<div class="App">
+    <header class="App-header">
+        <img src="/testimage.png" class="App-logo" alt="logo" />
+    </header>
+</div>
+
+<chat-box>
     <ul id="messages"></ul>
     <form action="">
         <input id="m" autocomplete="off" />
@@ -75,5 +142,12 @@
         });
     })
 </script>
-</body>
+</chat-box>
+
+
+<bg-ele>
+    <div class="rectangle"></div>
+</bg-ele>
+
+
 </html>
